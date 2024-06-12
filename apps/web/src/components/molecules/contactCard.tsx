@@ -3,6 +3,7 @@ import { SystemStyleObject, Theme } from '@mui/system';
 
 import { Card } from '@components/atoms';
 import { IContact } from 'react-coding-interview-shared/models';
+import { EditableDisplay } from './editableDisplay';
 
 export interface IContactCardProps {
   person: IContact;
@@ -19,10 +20,11 @@ export const ContactCard: React.FC<IContactCardProps> = ({
         <Avatar />
         <Box textAlign="center" mt={2}>
           <Typography variant="subtitle1" lineHeight="1rem">
-            {name}
+           
+            <EditableDisplay text={name} type="text"/>
           </Typography>
           <Typography variant="caption" color="text.secondary">
-            {email}
+          <EditableDisplay text={email} type="email"/>
           </Typography>
         </Box>
       </Box>
